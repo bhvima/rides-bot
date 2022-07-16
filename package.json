@@ -1,0 +1,31 @@
+{
+  "name": "rides-bot",
+  "version": "1.0.0",
+  "description": "Discord bot making carpool easier",
+  "main": "index.js",
+  "engines": {
+    "node": "10.x",
+    "npm": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhvima/rides-bot.git"
+  },
+  "keywords": [
+    "carpool",
+    "discord.js"
+  ],
+  "author": "Harshvardhan Sahay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bhvima/rides-bot/issues"
+  },
+  "homepage": "https://github.com/bhvima/rides-bot#readme",
+  "dependencies": {
+    "discord.js": "^13.8.1"
+  }
+}
