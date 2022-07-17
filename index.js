@@ -27,13 +27,15 @@ client.on('interactionCreate', async interaction => {
 	else if (interaction.customId.startsWith('ok') && 
 		!interaction.customId.endsWith(interaction.user.id)) {
 
+		const userId = interaction.customId.split('-').pop();
+
 		const embed = new MessageEmbed()
 						.setColor('#0099ff')
 						.setTitle('Ride Request')
 						.setDescription(`@${interaction.user.tag} has offered to give you a ride`);
 
 		await interaction.update({ components: []});
-		await interaction.reply({ embeds: [ embed ] });
+		await interaction.followUp({ content: `<@${userId}>`, embeds: [ embed ] });
 	}
 });
 
