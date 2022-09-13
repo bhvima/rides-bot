@@ -67,7 +67,7 @@ client.on('interactionCreate', async interaction => {
 					.setStyle('DANGER'),
 			);
 
-		await interaction.reply({ content: `@everyone`, embeds: [ embed ], components: [row] });
+		await interaction.reply({ content: `<@everyone>`, embeds: [ embed ], components: [row] });
 	}
 });
 
