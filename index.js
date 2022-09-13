@@ -31,7 +31,7 @@ client.on('interactionCreate', async interaction => {
 		const embed = new MessageEmbed()
 						.setColor('#0099ff')
 						.setTitle('Ride Request')
-						.setDescription(`@${interaction.member.nickname} has offered to give you a ride`);
+						.setDescription(`@${interaction.member.displayName} has offered to give you a ride`);
 
 		await interaction.update({ components: []});
 		await interaction.followUp({ content: `<@${userId}>`, embeds: [ embed ] });
@@ -48,7 +48,7 @@ client.on('interactionCreate', async interaction => {
 		const embed = new MessageEmbed()
 						.setColor('#0099ff')
 						.setTitle('Ride Request')
-						.setDescription(`Can someone give ${interaction.member.nickname} a ride?`)
+						.setDescription(`Can someone give ${interaction.member.displayName} a ride?`)
 						.addFields(
 							{ name: ':house:    From:', value: `\`\`\`${interaction.options.getString('from')}\`\`\`` },
 							{ name: ':office:    To:', value: `\`\`\`${interaction.options.getString('to')}\`\`\`` },
