@@ -31,7 +31,7 @@ client.on('interactionCreate', async interaction => {
 		const embed = new MessageEmbed()
 						.setColor('#0099ff')
 						.setTitle('Ride Request')
-						.setDescription(`@${interaction.member.displayName} has offered to give you a ride`);
+						.setDescription(`${interaction.member.displayName} has offered to give you a ride`);
 
 		await interaction.update({ components: []});
 		await interaction.followUp({ content: `<@${userId}>`, embeds: [ embed ] });
@@ -67,7 +67,7 @@ client.on('interactionCreate', async interaction => {
 					.setStyle('DANGER'),
 			);
 
-		await interaction.reply({ content: `<@everyone>`, embeds: [ embed ], components: [row] });
+		await interaction.reply({ content: `@everyone`, embeds: [ embed ], components: [row], allowedMentions:{ parse:["everyone"] } });
 	}
 });
 
