@@ -2,7 +2,7 @@
 const { Client, Intents, MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 
 // Create a new client instance
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS], allowedMentions: { parse: ['roles'], repliedUser: false } });
 
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
@@ -67,7 +67,7 @@ client.on('interactionCreate', async interaction => {
 					.setStyle('DANGER'),
 			);
 
-		await interaction.reply({ content: `@everyone`, embeds: [ embed ], components: [row], allowedMentions:{ parse:["everyone"] } });
+		await interaction.reply({ content: `@everyone`, embeds: [ embed ], components: [row] });
 	}
 });
 
